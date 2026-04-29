@@ -1,3 +1,5 @@
+[GrooveGauge Demo-compressed.pptx](https://github.com/user-attachments/files/27189927/GrooveGauge.Demo-compressed.pptx)
+
 # 🎵 Agentic Music Recommender
 
 ## Project Summary
@@ -153,4 +155,4 @@ https://www.loom.com/share/ae5fe60197e545378ea6af1233345932
 
 ## Slide deck
 
-![](assets/GrooveGauge Demo.pptx)
+[GrooveGauge Demo-compressed.pptx](https://github.com/user-attachments/files/27189929/GrooveGauge.Demo-compressed.pptx)
