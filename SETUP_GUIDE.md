@@ -28,6 +28,10 @@
 
 ## Quick Start
 
+### Install dependencies
+
+pip install -r requirements.txt
+
 ### 1️⃣ Run Without API Key (Classic Mode)
 
 The system works perfectly in classic mode without any API configuration:

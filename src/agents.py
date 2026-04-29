@@ -16,14 +16,25 @@ VALID_MOODS = [
     "reflective", "relaxed", "smooth",
 ]
 
-# Initialize Google Generative AI with API key from environment
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# Initialize Google Generative AI with API key from environment (lazy loading)
+_model = None
+
+def _get_model():
+    """Get or initialize the Gemini model."""
+    global _model
+    if _model is None:
+        api_key = os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            raise ValueError("GOOGLE_API_KEY environment variable is not set. Get one at https://makersuite.google.com/app/apikey")
+        genai.configure(api_key=api_key)
+        _model = genai.GenerativeModel("gemini-2.5-flash")
+    return _model
 
 
 async def genre_agent(user_input: str) -> str:
     """Extracts the best-matching genre from a natural language description."""
     def _call():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = _get_model()
         response = model.generate_content(
             f"You are a music genre classifier. Given a description of music preference, "
             f"pick the single best-matching genre from: {', '.join(VALID_GENRES)}. "
@@ -38,7 +49,7 @@ async def genre_agent(user_input: str) -> str:
 async def mood_agent(user_input: str) -> str:
     """Extracts the best-matching mood from a natural language description."""
     def _call():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = _get_model()
         response = model.generate_content(
             f"You are a music mood classifier. Given a description of music preference, "
             f"pick the single best-matching mood from: {', '.join(VALID_MOODS)}. "
@@ -53,7 +64,7 @@ async def mood_agent(user_input: str) -> str:
 async def energy_agent(user_input: str) -> float:
     """Extracts a target energy level (0.0–1.0) from a natural language description."""
     def _call():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = _get_model()
         response = model.generate_content(
             f"You are an energy level extractor for music. "
             f"Given a description, output a single float from 0.0 (very calm/quiet) "
@@ -70,7 +81,7 @@ async def energy_agent(user_input: str) -> float:
 async def acoustic_agent(user_input: str) -> bool:
     """Determines whether the user prefers acoustic over electronic sound."""
     def _call():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = _get_model()
         response = model.generate_content(
             f"You are an acoustic preference detector for music. "
             f"Given a description, determine if the user prefers acoustic/natural sound "
@@ -84,7 +95,7 @@ async def acoustic_agent(user_input: str) -> bool:
 async def valence_agent(user_input: str) -> Optional[float]:
     """Extracts emotional positivity (0.0–1.0) or None if ambiguous."""
     def _call():
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = _get_model()
         response = model.generate_content(
             f"You are a valence extractor for music. Valence measures emotional positivity "
             f"(0.0 = very sad/dark, 0.5 = neutral, 1.0 = very happy/uplifting). "
@@ -118,6 +129,7 @@ async def explanation_agent(
         A cohesive narrative explanation of the recommendations
     """
     def _call():
+        model = _get_model()
         # Format recommendation details
         rec_details = []
         for song, score, reasons in recommendations:
@@ -142,7 +154,6 @@ async def explanation_agent(
             f"Be conversational and insightful, not mechanical."
         )
 
-        model = genai.GenerativeModel("gemini-2.5-flash")
         response = model.generate_content(prompt)
         return response.text.strip()
 
