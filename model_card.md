@@ -48,7 +48,6 @@ Attack: Use recommendations to normalize conspiract theories
 
 Guardrail: Content moderation to flag suspicious themes, fact-checking integration and transparency.
 
-
 ### Surprise during testing
 
 Even with explicit prompts such as "reply with ONLY the genre name", LLMs are probabilistic. Same prompt, different runs, different outputs.

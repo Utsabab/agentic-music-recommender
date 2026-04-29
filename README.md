@@ -144,3 +144,5 @@ Refer to [**Test Report**](test_report.md)
 - Parallelism is sometimes the simplest solution to latency
 - Resilient systems make failure sgraceful, when API fails, the system falls back to classic mode
 - Multi-agent architecture makes each agent testable in islotaion
+
+This project demonstrates my learnings on designing end-to-end AI integrated system, implementing modular components such as agentic framework, testing and evaluating the system reliability, and documenting and explaining the AI decision making process clearly and responsibly. As an engineer, it is ever more crucial to learn to collaborate with AI tools and this project has given me that opportunity. Throughout the projects, I have honed my skills on collaborating with AI tools and have focused on thinking creatively and utilizing AI to implement the solutions.
