@@ -62,7 +62,8 @@ agentic-music-recommender/
 ├── README.md
 ├── SETUP_GUIDE.md               # Quick start guide
 ├── model_card.md                # Reflections
-├── IMPLEMENTATION_SUMMARY.md    # Implementation summary   
+├── IMPLEMENTATION_SUMMARY.md    # Implementation summary
+├── test_report.md               # Test Summary   
 └── pytest.ini                   # Test configuration
 ```
 

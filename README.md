@@ -10,7 +10,7 @@ The original music recommender system took in static user profile as an input. B
 
 In our extension of the project all the functionalities remain the same, however, we have added agentic capability which takes in user's input in natural language and agents translate the user input into five user attributes defined above. In addition, an agentic explainer summarizes and provides reasoning for why the songs were chosen.
 
-## Architecture Overview:
+## Architecture Overview
 
 The system can run in both classic mode or new agentic mode. In classic mode, static user profile is defined while in the agentic mode, user is asked for what kind of music they would like to listen to. The input text is processed and Gemini converts the text into the user attributes avorite_genre, favorite_mood, target_energy, likes_acoustic, and target_valence. The songs are loaded and a dictionary is created for the songs to be stored. The scoring method scores each song in the catalog based on user input and the songs are sorted and ranked in descending order. The top 80% of the songs are high rated songs and the rest 20% are randomly chosen from 40th to 60th quartile of the ranked songs. Finally, the recommendations are displayed for the user with an added natural narative explanation through explainer agent. Testing and evaluation are incorporated to validate the functionality of the method through unit testing, integration testing, orchestration testing and agentic testing.
 
@@ -109,6 +109,3 @@ Refer to [**Test Report**](test_report.md)
 - Parallelism is sometimes the simplest solution to latency
 - Resilient systems make failure sgraceful, when API fails, the system falls back to classic mode
 - Multi-agent architecture makes each agent testable in islotaion
-
-
-
