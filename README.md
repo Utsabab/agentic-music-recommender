@@ -85,6 +85,7 @@ AI Explanation: "These recommendations perfectly match your late-night study vib
 
 User Input: "Upbeat pop music for a workout session at the gym"
 
+Top 3 AI recommendations:
 1. "Gym Hero" by Max Pulse
    Score: 84.10
    Why: matches your pop preference | has the intense you like | 
@@ -105,6 +106,7 @@ AI Explanation: "These high-energy pop tracks are perfect for pushing through yo
 
 User Input: "Ambient music for a peaceful, relaxing evening"
 
+Top 3 AI recommendations:
 1. "Spacewalk Thoughts" by Orbit Bloom
    Score: 74.10
    Why: matches your ambient preference | energy 0.28 matches | 
