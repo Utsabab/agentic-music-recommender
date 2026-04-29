@@ -1,18 +1,10 @@
 # Setup & Quick Start Guide
 
-## System Status
-
-✅ **Core recommendation engine is fully functional**  
-✅ **10 out of 10 non-API tests passing**  
-⚙️ **Ready for agentic features with API key setup**
-
----
-
 ## What's Included
 
 ### Working Components
 
-1. **Module 3 Scoring Logic** ✅
+1. **Scoring Logic** ✅
    - Genre, mood, energy, acoustic, and valence scoring
    - 80% preference match + 20% discovery sampling
    - All test cases passing
@@ -223,21 +215,23 @@ Final Output with Scores & Explanations
 ```
 agentic-music-recommender/
 ├── src/
-│   ├── main.py              # Entry point (classic + agentic modes)
-│   ├── agents.py            # 5 specialist agents + orchestrator
-│   ├── recommender.py       # Scoring logic + data loading
+│   ├── main.py                  # Entry point with 2 modes
+│   ├── agents.py                # 5 specialist agents + orchestrator
+│   ├── recommender.py           # Scoring, loading, recommendation logic
 │   └── __init__.py
 ├── tests/
-│   ├── test_agents.py       # Comprehensive agent & flow tests
-│   ├── test_recommender.py  # Module 3 logic tests
+│   ├── test_agents.py           # 19 comprehensive tests
+│   ├── test_recommender.py      # Module 3 logic tests
 │   └── __init__.py
 ├── data/
-│   └── songs.csv            # Song catalog (20+ songs)
-├── requirements.txt         # Dependencies
-├── pytest.ini               # Test configuration
-├── AGENTIC_FLOW.md          # System architecture diagram
-├── TEST_REPORT.md           # Detailed test results
-└── SETUP_GUIDE.md           # This file
+│   └── songs.csv                # 20+ songs with metadata
+├── requirements.txt             # google-generativeai, pandas, pytest, pytest-asyncio, streamlit
+├── pytest.ini                   # Test configuration
+├── AGENTIC_FLOW.md              # Architecture diagram
+├── IMPLEMENTATION_SUMMARY.md    # Implementation summary
+├── model_card.md                # Reflections
+├── SETUP_GUIDE.md               # Quick start guide
+└── README.md 
 ```
 
 ---
@@ -302,42 +296,3 @@ pytest tests/test_agents.py::TestScoringLogic::test_score_song_genre_match -v
 # Manual evaluation (requires API key)
 python -c "import asyncio; from tests.test_agents import manual_evaluation_test; asyncio.run(manual_evaluation_test())"
 ```
-
----
-
-## What's Next?
-
-1. **Try Classic Mode** (no setup):
-   ```bash
-   python src/main.py --classic
-   ```
-
-2. **Run Unit Tests** (verify core logic):
-   ```bash
-   pytest tests/ -m unit -v
-   ```
-
-3. **Optional: Set Up API Key** (unlock agentic features):
-   - Get free key from https://makersuite.google.com/app/apikey
-   - `export GOOGLE_API_KEY='your-key'`
-   - `python src/main.py` for interactive mode
-
-4. **Optional: Run Full Test Suite** (with API key):
-   ```bash
-   pytest tests/ -v
-   ```
-
----
-
-## Key Features
-
-✨ **5 Specialist Agents** — One for each preference dimension  
-⚡ **Parallel Execution** — All 5 agents run concurrently (~2-3 sec)  
-🎯 **Intelligent Scoring** — Multi-factor preference matching  
-🔄 **Discovery Sampling** — 20% random picks from 40-60th percentile  
-📊 **Smart Explanations** — Each song comes with scoring reasons  
-🤖 **Natural Language** — Describe music however you want  
-
----
-
-**Status:** ✅ Production-ready (core features), 🔐 Optional agentic enhancements with API key
