@@ -29,18 +29,23 @@ No feedback loop
 ### Prevent GrooveGauge misuse
 
 Attack: Recommend depressing/dark music to vulnerable users to worsen mental state
+
 Guardrail: Content warning or mental health prompts
 
 Attack: System systematically excludes genres/artists based on protected characteristics
+
 Guardrail: Audit recommendations across diverse inputs
 
 Attack: Craft prompts that break the agent and reveal information
+
 Guardrail: Input sanitization, output validation, and prompt hardening
 
 Attack: Recommend explicit/mature music to minors
+
 Guardrail: Integrated Age gate, content filters, parental controls, and content labels.
 
 Attack: Use recommendations to normalize conspiract theories
+
 Guardrail: Content moderation to flag suspicious themes, fact-checking integration and transparency.
 
 
