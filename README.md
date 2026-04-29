@@ -59,35 +59,68 @@ python src/main.py
 
 ### Late Night Study
 
-Top Recommendation: 'Midnight Coding' by LoRoom
-Score: 99.20
-Why: matches your lofi preference | has the chill you like | energy 0.4 matches | has the acoustic sound you enjoy
+User Input: "I want chill lofi hip-hop for studying late at night"
 
-AI Explanation: These recommendations perfectly match your late-night 
-study vibe with relaxing lofi beats and acoustic warmth. Each track 
-balances gentle melodies with energizing yet calm instrumentation 
-to keep you focused without distracting from your work.
+Top 3 AI recommendations:
+1. "Midnight Coding" by LoRoom
+   Score: 99.20
+   Why: matches your lofi preference | has the chill you like | 
+        energy 0.42 matches | has the acoustic sound you enjoy | 
+        valence 0.56 matches
+
+2. "Library Rain" by Paper Lanterns
+   Score: 99.00
+   Why: matches your lofi preference | has the chill you like | 
+        energy 0.35 matches | has the acoustic sound you enjoy | 
+        valence 0.60 matches
+
+3. "Focus Flow" by LoRoom
+   Score: 74.90
+   Why: matches your lofi preference | energy 0.40 matches | 
+        has the acoustic sound you enjoy | valence 0.60 matches
+
+AI Explanation: "These recommendations perfectly match your late-night study vibe with relaxing lofi beats and acoustic warmth. Each track balances gentle melodies with energizing yet calm instrumentation to keep you focused without distracting from your work."
 
 ### Gym Workout
 
-Top Recommendation: 'Gym Hero' by Max Pulse
-Score: 84.10
-Why: matches your pop preference | has the intense you like | energy 0.9 matches | valence 0.8 matches
+User Input: "Upbeat pop music for a workout session at the gym"
 
-AI Explanation: These high-energy pop tracks are perfect for pushing 
-through your workout. With driving beats and uplifting vibes, they'll 
-keep your motivation high and rhythm on point from warm-up to cool-down.
+1. "Gym Hero" by Max Pulse
+   Score: 84.10
+   Why: matches your pop preference | has the intense you like | 
+        energy 0.93 matches | valence 0.80 matches
+
+2. "Sunrise City" by Neon Echo
+   Score: 58.00
+   Why: matches your pop preference | energy 0.82 matches | 
+        valence 0.84 matches
+
+3. "Electric Dreams" by Synth Wave
+   Score: 29.50
+   Why: energy 0.88 matches | valence 0.80 matches
+
+AI Explanation: "These high-energy pop tracks are perfect for pushing through your workout. With driving beats and uplifting vibes, they'll keep your motivation high and rhythm on point from warm-up to cool-down."
 
 ### Relaxing Evening
 
-Top Recommendation: 'Spacewalk Thoughts' by Orbit Bloom
-Score: 74.10
-Why: matches your ambient preference | energy 0.3 matches | has the acoustic sound you enjoy
+User Input: "Ambient music for a peaceful, relaxing evening"
 
-AI Explanation: These recommendations create the perfect peaceful evening 
-atmosphere with calming ambient textures and natural acoustic elements. 
-The gentle instrumentation promotes relaxation while maintaining engaging 
-musical depth.
+1. "Spacewalk Thoughts" by Orbit Bloom
+   Score: 74.10
+   Why: matches your ambient preference | energy 0.28 matches | 
+        has the acoustic sound you enjoy | valence 0.70 matches
+
+2. "Island Vibes" by Reggae Riddim
+   Score: 62.90
+   Why: has the peaceful you like | energy 0.62 complements | 
+        has the acoustic sound you enjoy | valence 0.80 matches
+
+3. "Coffee Shop Stories" by Slow Stereo
+   Score: 43.50
+   Why: energy 0.37 matches | has the acoustic sound you enjoy | 
+        valence 0.70 matches
+
+AI Explanation: "These recommendations create the perfect peaceful evening atmosphere with calming ambient textures and natural acoustic elements. The gentle instrumentation promotes relaxation while maintaining engaging musical depth for a truly immersive experience."
 
 ## Design Decisions
 
