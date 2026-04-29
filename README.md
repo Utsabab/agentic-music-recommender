@@ -146,3 +146,11 @@ Refer to [**Test Report**](test_report.md)
 - Multi-agent architecture makes each agent testable in islotaion
 
 This project demonstrates my learnings on designing end-to-end AI integrated system, implementing modular components such as agentic framework, testing and evaluating the system reliability, and documenting and explaining the AI decision making process clearly and responsibly. As an engineer, it is ever more crucial to learn to collaborate with AI tools and this project has given me that opportunity. Throughout the projects, I have honed my skills on collaborating with AI tools and have focused on thinking creatively and utilizing AI to implement the solutions.
+
+## Demo
+
+https://www.loom.com/share/ae5fe60197e545378ea6af1233345932
+
+## Slide deck
+
+![](assets/GrooveGauge Demo.pptx)

@@ -27,7 +27,7 @@ def _get_model():
         if not api_key:
             raise ValueError("GOOGLE_API_KEY environment variable is not set. Get one at https://makersuite.google.com/app/apikey")
         genai.configure(api_key=api_key)
-        _model = genai.GenerativeModel("gemini-2.5-flash")
+        _model = genai.GenerativeModel("gemini-2.5-flash-lite")
     return _model
 
 
