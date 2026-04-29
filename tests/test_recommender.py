@@ -1,4 +1,11 @@
-from src.recommender import Song, UserProfile, Recommender
+import sys
+import os
+import pytest
+
+# Add src directory to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+from recommender import Song, UserProfile, Recommender
 
 def make_small_recommender() -> Recommender:
     songs = [
@@ -30,6 +37,7 @@ def make_small_recommender() -> Recommender:
     return Recommender(songs)
 
 
+@pytest.mark.unit
 def test_recommend_returns_songs_sorted_by_score():
     user = UserProfile(
         favorite_genre="pop",
@@ -46,6 +54,7 @@ def test_recommend_returns_songs_sorted_by_score():
     assert results[0].mood == "happy"
 
 
+@pytest.mark.unit
 def test_explain_recommendation_returns_non_empty_string():
     user = UserProfile(
         favorite_genre="pop",
