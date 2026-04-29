@@ -225,13 +225,16 @@ agentic-music-recommender/
 │   └── __init__.py
 ├── data/
 │   └── songs.csv                # 20+ songs with metadata
+├── assets/
+    ├── AGENTIC_FLOW.md          # Architecture diagram
+    ├── agenticRecommender.png
+    ├── recommendationLogicFlow.png
 ├── requirements.txt             # google-generativeai, pandas, pytest, pytest-asyncio, streamlit
-├── pytest.ini                   # Test configuration
-├── AGENTIC_FLOW.md              # Architecture diagram
-├── IMPLEMENTATION_SUMMARY.md    # Implementation summary
-├── model_card.md                # Reflections
+├── README.md
 ├── SETUP_GUIDE.md               # Quick start guide
-└── README.md 
+├── model_card.md                # Reflections
+├── IMPLEMENTATION_SUMMARY.md    # Implementation summary   
+└── pytest.ini                   # Test configuration 
 ```
 
 ---
