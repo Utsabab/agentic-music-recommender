@@ -102,6 +102,53 @@ async def valence_agent(user_input: str) -> Optional[float]:
     return await asyncio.to_thread(_call)
 
 
+async def explanation_agent(
+    user_profile: UserProfile,
+    recommendations: list,
+    user_input: str
+) -> str:
+    """Generates a natural language explanation for why these songs were recommended.
+
+    Args:
+        user_profile: The extracted user preferences
+        recommendations: List of tuples (song_dict, score, reasons_str)
+        user_input: Original natural language input from user
+
+    Returns:
+        A cohesive narrative explanation of the recommendations
+    """
+    def _call():
+        # Format recommendation details
+        rec_details = []
+        for song, score, reasons in recommendations:
+            rec_details.append(
+                f"- '{song['title']}' by {song['artist']} (Score: {score:.1f})\n"
+                f"  Reasons: {reasons}"
+            )
+        rec_text = "\n".join(rec_details)
+
+        prompt = (
+            f"You are a music recommendation expert explaining why certain songs match a user's taste.\n\n"
+            f"User's request: \"{user_input}\"\n\n"
+            f"Extracted preferences:\n"
+            f"- Genre: {user_profile.favorite_genre}\n"
+            f"- Mood: {user_profile.favorite_mood}\n"
+            f"- Energy level: {user_profile.target_energy:.1f}/1.0\n"
+            f"- Prefers acoustic: {user_profile.likes_acoustic}\n"
+            f"- Emotional tone (valence): {user_profile.target_valence if user_profile.target_valence else 'not specified'}\n\n"
+            f"Top recommendations:\n{rec_text}\n\n"
+            f"Generate a warm, coherent paragraph (2-3 sentences) explaining why these songs match the user's taste. "
+            f"Focus on how the recommendations align with their stated preferences and mood. "
+            f"Be conversational and insightful, not mechanical."
+        )
+
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        response = model.generate_content(prompt)
+        return response.text.strip()
+
+    return await asyncio.to_thread(_call)
+
+
 async def extract_user_profile(user_input: str) -> UserProfile:
     """Runs all 5 preference agents in parallel and assembles a UserProfile."""
     genre, mood, energy, acoustic, valence = await asyncio.gather(

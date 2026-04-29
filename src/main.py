@@ -17,7 +17,7 @@ import asyncio
 import os
 import sys
 from recommender import load_songs, recommend_songs
-from agents import extract_user_profile
+from agents import extract_user_profile, explanation_agent
 
 
 def main() -> None:
@@ -142,6 +142,15 @@ async def agentic_main() -> None:
         print(f"{song['title']} by {song['artist']} — Score: {score:.2f}")
         print(f"Because: {explanation}")
         print()
+
+    # Generate a natural narrative explanation
+    print("Generating personalized explanation...")
+    narrative = await explanation_agent(profile, recommendations, user_input)
+    print("\n" + "=" * 60)
+    print("Why These Songs?")
+    print("=" * 60)
+    print(narrative)
+    print("=" * 60)
 
 
 if __name__ == "__main__":
