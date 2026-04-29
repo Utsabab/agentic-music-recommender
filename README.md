@@ -1,5 +1,3 @@
-[GrooveGauge Demo-compressed.pptx](https://github.com/user-attachments/files/27189927/GrooveGauge.Demo-compressed.pptx)
-
 # 🎵 Agentic Music Recommender
 
 ## Project Summary
